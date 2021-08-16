@@ -3,11 +3,14 @@
 // global
 const beginGame = ()=> {
   document.getElementById('ready-button').disable = true
+  let player1 = random
+  let player2 = other
   // start the match
   // blue always starts first
 }
 
-// const turn;
+
+// const turn
 
 // const winGame = ()=>{
 //   alert: 'Congratulations you have won!'
@@ -26,7 +29,7 @@ const player2 = {
   color: 'red'
 }
 const readiedUp = {
-  if(player1 + player2) = ()=>{
+  if(player1 && player2){
     document.getElementById('ready-button')
   }
 }
@@ -34,7 +37,7 @@ const readiedUp = {
 
 //classes
 class Pieces {
-  constructor(pieces){
+  constructor(blue, red){
     this.blue = [general, colonel, major, captain, lieutenant, sergeant, corporal, mineSweeper, infantry, bomb, flag, commando]
     this.red = [general, colonel, major, captain, lieutenant, sergeant, corporal, mineSweeper, infantry, bomb, flag, commando]
   }
@@ -65,25 +68,21 @@ const lieutenant = {
   this.red[4]
   let value = 5
 }
-
 const sergeant = {
   this.blue[5]
   this.red[5]
   let value = 6
 }
-
 const corporal = {
   this.blue[6]
   this.red[6]
   let value = 7
 }
-
 const mineSweeper = {
   this.blue[7]
   this.red[7]
   let value = 8
 }
-
 const infantry = {
   this.blue[8]
   this.red[8]
