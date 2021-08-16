@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <h1>Stratego</h1>
+  </head>
+  <body>
+      <div class="pieces-container-p1">
+        <div class="blue" id="general">1</div>
+        <div class="blue" id="colonel">2</div>
+        <div class="blue" id="major">3</div>
+        <div class="blue" id="major2">3</div>
+        <div class="blue" id="captain">4</div>
+        <div class="blue" id="captain2">4</div>
+        <div class="blue" id="captain3">4</div>
+        <div class="blue" id="lieutenant">5</div>
+        <div class="blue" id="lieutenant2">5</div>
+        <div class="blue" id="lieutenant3">5</div>
+        <div class="blue" id="lieutenant4">5</div>
+        <div class="blue" id="sergeant">6</div>
+        <div class="blue" id="sergeant2">6</div>
+        <div class="blue" id="sergeant3">6</div>
+        <div class="blue" id="sergeant4">6</div>
+        <div class="blue" id="corporal">7</div>
+        <div class="blue" id="corporal2">7</div>
+        <div class="blue" id="corporal3">7</div>
+        <div class="blue" id="corporal4">7</div>
+        <div class="blue" id="mine-sweeper">8</div>
+        <div class="blue" id="mine-sweeper2">8</div>
+        <div class="blue" id="mine-sweeper3">8</div>
+        <div class="blue" id="mine-sweeper4">8</div>
+        <div class="blue" id="mine-sweeper5">8</div>
+        <div class="blue" id="infantry">9</div>
+        <div class="blue" id="infantry2">9</div>
+        <div class="blue" id="infantry3">9</div>
+        <div class="blue" id="infantry4">9</div>
+        <div class="blue" id="infantry5">9</div>
+        <div class="blue" id="infantry6">9</div>
+        <div class="blue" id="infantry7">9</div>
+        <div class="blue" id="infantry8">9</div>
+        <div class="blue" id="commando">C</div>
+        <div class="blue" id="bomb">b</div>
+        <div class="blue" id="bomb2">b</div>
+        <div class="blue" id="bomb3">b</div>
+        <div class="blue" id="bomb4">b</div>
+        <div class="blue" id="bomb5">b</div>
+        <div class="blue" id="bomb6">b</div>
+        <div class="blue" id="flag">f</div>
+      </div>
+      <div class="pieces-container-p2">
+        <div class="red" id="general">1</div>
+        <div class="red" id="colonel">2</div>
+        <div class="red" id="major">3</div>
+        <div class="red" id="major2">3</div>        
+        <div class="red" id="captain">4</div>
+        <div class="red" id="captain2">4</div>
+        <div class="red" id="captain3">4</div>
+        <div class="red" id="lieutenant">5</div>
+        <div class="red" id="lieutenant2">5</div>
+        <div class="red" id="lieutenant3">5</div>
+        <div class="red" id="lieutenant4">5</div>
+        <div class="red" id="sergeant">6</div>
+        <div class="red" id="sergeant2">6</div>
+        <div class="red" id="sergeant3">6</div>
+        <div class="red" id="sergeant4">6</div>
+        <div class="red" id="corporal">7</div>
+        <div class="red" id="corporal2">7</div>
+        <div class="red" id="corporal3">7</div>
+        <div class="red" id="corporal4">7</div>
+        <div class="red" id="mine-sweeper">8</div>
+        <div class="red" id="mine-sweeper2">8</div>
+        <div class="red" id="mine-sweeper3">8</div>
+        <div class="red" id="mine-sweeper4">8</div>
+        <div class="red" id="mine-sweeper5">8</div>
+        <div class="red" id="infantry">9</div>
+        <div class="red" id="infantry2">9</div>
+        <div class="red" id="infantry3">9</div>
+        <div class="red" id="infantry4">9</div>
+        <div class="red" id="infantry5">9</div>
+        <div class="red" id="infantry6">9</div>
+        <div class="red" id="infantry7">9</div>
+        <div class="red" id="infantry8">9</div>
+        <div class="red" id="commando">C</div>
+        <div class="red" id="bomb">b</div>
+        <div class="red" id="bomb2">b</div>
+        <div class="red" id="bomb3">b</div>
+        <div class="red" id="bomb4">b</div>
+        <div class="red" id="bomb5">b</div>
+        <div class="red" id="bomb6">b</div>
+        <div class="red" id="flag">f</div>
+      </div>
+      <div id="board-container">
+          <div class="square" id="1A"></div>
+          <div class="square" id="1B"></div>
+          <div class="square" id="1C"></div>
+          <div class="square" id="1D"></div>
+          <div class="square" id="1E"></div>
+          <div class="square" id="1F"></div>
+          <div class="square" id="1G"></div>
+          <div class="square" id="1H"></div>
+          <div class="square" id="1I"></div>
+          <div class="square" id="1J"></div>
+          <div class="square" id="2A"></div>
+          <div class="square" id="2B"></div>
+          <div class="square" id="2C"></div>
+          <div class="square" id="2D"></div>
+          <div class="square" id="2E"></div>
+          <div class="square" id="2F"></div>
+          <div class="square" id="2G"></div>
+          <div class="square" id="2H"></div>
+          <div class="square" id="2I"></div>
+          <div class="square" id="2J"></div>
+          <div class="square" id="3A"></div>
+          <div class="square" id="3B"></div>
+          <div class="square" id="3C"></div>
+          <div class="square" id="3D"></div>
+          <div class="square" id="3E"></div>
+          <div class="square" id="3F"></div>
+          <div class="square" id="3G"></div>
+          <div class="square" id="3H"></div>
+          <div class="square" id="3I"></div>
+          <div class="square" id="3J"></div>
+          <div class="square" id="4A"></div>
+          <div class="square" id="4B"></div>
+          <div class="square" id="4C"></div>
+          <div class="square" id="4D"></div>
+          <div class="square" id="4E"></div>
+          <div class="square" id="4F"></div>
+          <div class="square" id="4G"></div>
+          <div class="square" id="4H"></div>
+          <div class="square" id="4I"></div>
+          <div class="square" id="4J"></div>
+          <div class="square" id="5A"></div>
+          <div class="square" id="5B"></div>
+          <div class="square" id="5C"></div>
+          <div class="square" id="5D"></div>
+          <div class="square" id="5E"></div>
+          <div class="square" id="5F"></div>
+          <div class="square" id="5G"></div>
+          <div class="square" id="5H"></div>
+          <div class="square" id="5I"></div>
+          <div class="square" id="5J"></div>
+          <div class="square" id="6A"></div>
+          <div class="square" id="6B"></div>
+          <div class="square" id="6C"></div>
+          <div class="square" id="6D"></div>
+          <div class="square" id="6E"></div>
+          <div class="square" id="6F"></div>
+          <div class="square" id="6G"></div>
+          <div class="square" id="6H"></div>
+          <div class="square" id="6I"></div>
+          <div class="square" id="6J"></div>
+          <div class="square" id="7A"></div>
+          <div class="square" id="7B"></div>
+          <div class="square" id="7C"></div>
+          <div class="square" id="7D"></div>
+          <div class="square" id="7E"></div>
+          <div class="square" id="7F"></div>
+          <div class="square" id="7G"></div>
+          <div class="square" id="7H"></div>
+          <div class="square" id="7I"></div>
+          <div class="square" id="7J"></div>
+          <div class="square" id="8A"></div>
+          <div class="square" id="8B"></div>
+          <div class="square" id="8C"></div>
+          <div class="square" id="8D"></div>
+          <div class="square" id="8E"></div>
+          <div class="square" id="8F"></div>
+          <div class="square" id="8G"></div>
+          <div class="square" id="8H"></div>
+          <div class="square" id="8I"></div>
+          <div class="square" id="8J"></div>
+          <div class="square" id="9A"></div>
+          <div class="square" id="9B"></div>
+          <div class="square" id="9C"></div>
+          <div class="square" id="9D"></div>
+          <div class="square" id="9E"></div>
+          <div class="square" id="9F"></div>
+          <div class="square" id="9G"></div>
+          <div class="square" id="9H"></div>
+          <div class="square" id="9I"></div>
+          <div class="square" id="9J"></div>
+          <div class="square" id="10A"></div>
+          <div class="square" id="10B"></div>
+          <div class="square" id="10C"></div>
+          <div class="square" id="10D"></div>
+          <div class="square" id="10E"></div>
+          <div class="square" id="10F"></div>
+          <div class="square" id="10G"></div>
+          <div class="square" id="10H"></div>
+          <div class="square" id="10I"></div>
+          <div class="square" id="10J"></div>
+          </div>
+
+      <!-- <div class="piece">
+          <figure id="front"></figure>
+          <figure id="back"></figure>
+      </div> -->
+
+
+    <form id="form">
+      <button type="submit" id="ready-button">Ready</button>
+    </form>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
