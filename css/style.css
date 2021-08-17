@@ -44,22 +44,24 @@ h1 {
   margin-bottom: 100px;
 }
 .pieces-container-p1 {
-  /* display: flex; */
+  display: inline-block;
   background-color: white;
   border: 12px double black;
   justify-content: space-around;
   width: 300px;
   height: 500px;
   margin-bottom: 90px;
+  margin-right: 150px;
 }
 .pieces-container-p2 {
-  /* display: flex; */
+  display: inline-block;
   background-color: white;
   border: 12px double black;
   justify-content: space-around;
   width: 300px;
   height: 500px;
   margin-bottom: 90px;
+  margin-left: 150px;
 }
 
 #ready-button {
@@ -71,6 +73,14 @@ h1 {
   transform: translateY(2px);
 }
 
+#start-button {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-color: black;
+}
+#start-button:active {
+  transform: translateY(2px);
+}
 
 
 
