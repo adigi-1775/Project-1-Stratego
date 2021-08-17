@@ -3,14 +3,43 @@
 // global
 const beginGame = ()=> {
   document.getElementById('ready-button').disable = true
-  let player1 = random
-  let player2 = other
+  let player1 = movePiece()
   // start the match
-  // blue always starts first
 }
 
+const bluePieces = ['general', 'colonel', 'major', 'captain', 'lieutenant', 'sergeant', 'corporal', 'mineSweeper', 'infantry', 'bomb', 'flag', 'commando'];
 
-// const turn
+const redPieces = ['general', 'colonel', 'major', 'captain', 'lieutenant', 'sergeant', 'corporal', 'mineSweeper', 'infantry', 'bomb', 'flag', 'commando'];
+
+const cells = ['1A', '1B', '1C', '1D', '1E', '1F', '1G', '1H', '1I', '1J', '2A', '2B', '2C', '2D', '2E', '2F','2G', '2H', '2I', '2J', '3A', '3B','3C', '3D', '3E', '3F', '3G', '3H', '3I', '3J', '4A', '4B', '4C', '4D','4E', '4F', '4G', '4H', '4I', '4J', '7A', '7B', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8B', '8C', '8D', '8E', '8F', '8G', '8H', '8I', '8J', '9A', '9B', '9C', '9D', '9E', '9F', '9G', '9H', '9I', '9J', '10A', '10B', '10C', '10D', '10E', '10F', '10G', '10H', '10I', '10J']
+
+const movePiece() = {
+  let state = false //false if no piece has been selected
+  let currentPiece;
+  let currentCell;
+
+  let cells = document.getElementByClass('square');
+    for(let i = 0; i<cells.length; i++){
+      cells[i].onclick = function(){
+      getCell(this);
+      };
+    }
+  function getCell(that){
+    if(!state){ //this means if the state is false (i.e. no piece selected
+      state = true; //piece has been selected
+      currentPiece = that.innerHTML; //get the current piece selected
+      currentCell = that; //get the current cell selection
+    }else{
+      that.innerHTML = currentPiece; //Set the selected space to the piece that was grabbed
+      currentCell.innerHTML = ''; //remove the piece from its old location
+      state = false; //piece has been placed, so set state back to false
+    }
+  }
+}
+
+const pieceValue = document.querySelectorAll('')
+const pieceValueArray = Array.from(pieceValue)
+console.log(pieceValueArray);
 
 // const winGame = ()=>{
 //   alert: 'Congratulations you have won!'
@@ -20,118 +49,96 @@ const beginGame = ()=> {
 //   alert: 'You have been defeated!'
 // }
 
+const setUp() = []
+(function place(){
+  for(i=0; i<blue)
+})
+
 const player1 = {
-  name: '',
-  color: 'blue'
+  this.blue
 }
 const player2 = {
-  name: '',
-  color: 'red'
+  this.red
 }
-const readiedUp = {
-  if(player1 && player2){
-    document.getElementById('ready-button')
-  }
-}
+// const readiedUp = {
+//   if(player1 + player2){
+//     document.getElementById('ready-button')
+//   }
+// }
 
-
-//classes
-class Pieces {
-  constructor(blue, red){
-    this.blue = [general, colonel, major, captain, lieutenant, sergeant, corporal, mineSweeper, infantry, bomb, flag, commando]
-    this.red = [general, colonel, major, captain, lieutenant, sergeant, corporal, mineSweeper, infantry, bomb, flag, commando]
-  }
-}
 
 const general = {
-  this.blue[0],
-  this.red[0],
-  let value = 1
+  this.blue[0]
+  this.red[0]
+  let value = 'general'
 }
 const colonel = {
   this.blue[1]
   this.red[1]
-  let value = 2
+  let value = ;'colonel'
 }
 const major = {
   this.blue[2]
   this.red[2]
-  let value = 3
+  let value = 'major'
 }
 const captain = {
   this.blue[3]
   this.red[3]
-  let value = 4
+  let value = 'captain'
 }
 const lieutenant = {
   this.blue[4]
   this.red[4]
-  let value = 5
+  let value = 'lieutenant'
 }
 const sergeant = {
   this.blue[5]
   this.red[5]
-  let value = 6
+  let value = 'sergeant'
 }
 const corporal = {
   this.blue[6]
   this.red[6]
-  let value = 7
+  let value = 'corporal'
 }
 const mineSweeper = {
   this.blue[7]
   this.red[7]
-  let value = 8
+  let value = 'mineSweeper'
 }
 const infantry = {
   this.blue[8]
   this.red[8]
-  let value = 9
+  let value = 'infantry'
 }
 const commando = {
   this.blue[9]
   this.red[9]
-  let value = 10
+  let value = 'commando'
 }
 const bomb = {
   this.blue[10]
   this.red[10]
-  let value = null
+  let value = 'bomb'
 }
 const flag = {
   this.blue[11]
   this.red[11]
-  let value = null;
+  let value = 'flag'
 }
 
 // game logic
 const game = {
   startGame(){
-    if(player1 + player2 === readiedUp){
-      beginGame()
+    if(player1 + player2 ){
+      document.getElementById('ready-button').disable = true
+      let player1 = movePiece()
     }
   }
 }
 
-const movePiece = {
 
-}
-
-
-
-// const pieceVs = (player1Piece, player2Piece)=>{
-//   const matchUp = {
-//     if(general1 > 1){
-//       'win'
-//     }else if(general1 <= 1){
-//       'lose'
-//     }else if(general1 === bomb){
-//       'lose'
-//     }else if(general1 === flag){
-//       winGame()
-//       }
-//
-//     }
 
 const pieceVs = {
         general: {
@@ -315,6 +322,14 @@ function selectPiece(){
 //
 // }
 
+document.getElementById("5C").style.pointerEvents = "none";
+document.getElementById("5D").style.pointerEvents = "none";
+document.getElementById("5G").style.pointerEvents = "none";
+document.getElementById("5H").style.pointerEvents = "none";
+document.getElementById("6C").style.pointerEvents = "none";
+document.getElementById("6D").style.pointerEvents = "none";
+document.getElementById("6G").style.pointerEvents = "none";
+document.getElementById("6H").style.pointerEvents = "none";
 
 // event listeners
 let form = document.getElementById('ready-button')
@@ -322,3 +337,8 @@ let form = document.getElementById('ready-button')
         event.preventDefault()
         game.startGame()
     })
+
+
+
+
+game.startGame()
