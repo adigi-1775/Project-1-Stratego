@@ -51,7 +51,7 @@ h1 {
   width: 300px;
   height: 500px;
   margin-bottom: 90px;
-  margin-right: 150px;
+  margin-right: 25px;
 }
 .pieces-container-p2 {
   display: inline-block;
@@ -61,7 +61,7 @@ h1 {
   width: 300px;
   height: 500px;
   margin-bottom: 90px;
-  margin-left: 150px;
+  margin-left: 25px;
 }
 
 #ready-button {
@@ -72,7 +72,6 @@ h1 {
 #ready-button:active {
   transform: translateY(2px);
 }
-
 #start-button {
   padding-top: 2px;
   padding-bottom: 2px;
@@ -81,6 +80,34 @@ h1 {
 #start-button:active {
   transform: translateY(2px);
 }
+
+
+
+/* .square, #5C {
+  background-color: red;
+} */
+/* #5D {
+  background-color: red;
+}
+#5G {
+  background-color: red;
+}
+#5H {
+  background-color: red;
+}
+#6C {
+  background-color: red;
+}
+#6D {
+  background-color: red;
+}
+#6G {
+  background-color: red;
+}
+#6H {
+  background-color: red;
+} */
+
 
 
 

@@ -2,25 +2,23 @@
 
 // global
 let pieceSelection = null;
-let movePiece = null;
+let pieceToBeMoved = null;
+let timesClicked = 0;
 
-const startGame = ()=> {
-  document.getElementById('ready-button').disable = true
-  document.getElementById('start-button').disable = true
-  let player1 = movePiece()
-}
+// const player1 = bluePieces[]
+// const player2 = redPieces[]
+
 
 // array of objects
 const bluePieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: null}];
 
+const redPieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: null}];
 
-const redPieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, 'flag'];
-
-const cells = ['1A', '1B', '1C', '1D', '1E', '1F', '1G', '1H', '1I', '1J', '2A', '2B', '2C', '2D', '2E', '2F','2G', '2H', '2I', '2J', '3A', '3B','3C', '3D', '3E', '3F', '3G', '3H', '3I', '3J', '4A', '4B', '4C', '4D','4E', '4F', '4G', '4H', '4I', '4J', '5A', '5B', '5E', '5F', '5I', '5J', '6A', '6B', '6E', '6F', '6I', '6J', '7A', '7B', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8B', '8C', '8D', '8E', '8F', '8G', '8H', '8I', '8J', '9A', '9B', '9C', '9D', '9E', '9F', '9G', '9H', '9I', '9J', '10A', '10B', '10C', '10D', '10E', '10F', '10G', '10H', '10I', '10J']
+const cells = ['1A', '1B', '1C', '1D', '1E', '1F', '1G', '1H', '1I', '1J', '2A', '2B', '2C', '2D', '2E', '2F','2G', '2H', '2I', '2J', '3A', '3B','3C', '3D', '3E', '3F', '3G', '3H', '3I', '3J', '4A', '4B', '4C', '4D','4E', '4F', '4G', '4H', '4I', '4J', '5A', '5B', '5E', '5F', '5I', '5J', '6A', '6B', '6E', '6F', '6I', '6J', '7A', '7B', '7C', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8B', '8C', '8D', '8E', '8F', '8G', '8H', '8I', '8J', '9A', '9B', '9C', '9D', '9E', '9F', '9G', '9H', '9I', '9J', '10A', '10B', '10C', '10D', '10E', '10F', '10G', '10H', '10I', '10J']
 
 const blueCells = ['1A', '1B', '1C', '1D', '1E', '1F', '1G', '1H', '1I', '1J', '2A', '2B', '2C', '2D', '2E', '2F','2G', '2H', '2I', '2J', '3A', '3B','3C', '3D', '3E', '3F', '3G', '3H', '3I', '3J', '4A', '4B', '4C', '4D','4E', '4F', '4G', '4H', '4I', '4J']
 
-const redCells = ['7A', '7B', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8B', '8C', '8D', '8E', '8F', '8G', '8H', '8I', '8J', '9A', '9B', '9C', '9D', '9E', '9F', '9G', '9H', '9I', '9J', '10A', '10B', '10C', '10D', '10E', '10F', '10G', '10H', '10I', '10J']
+const redCells = ['7A', '7B', '7C', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8B', '8C', '8D', '8E', '8F', '8G', '8H', '8I', '8J', '9A', '9B', '9C', '9D', '9E', '9F', '9G', '9H', '9I', '9J', '10A', '10B', '10C', '10D', '10E', '10F', '10G', '10H', '10I', '10J']
 
 // const winGame = ()=>{
 //   alert: 'Congratulations you have won!'
@@ -46,11 +44,6 @@ const redCells = ['7A', '7B', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8
 // game logic
 const game = {
   placePieces(){
-    document.querySelector('.pieces-container-p1').addEventListener('click', (event)=>{
-      if(event.target.getAttribute('class') === 'blue'){
-        pieceSelection = event.target
-      }
-    })
     document.querySelector('#board-container').addEventListener('click', (event)=>{
       if(pieceSelection && event.target.getAttribute('class') === 'square'){
         if(pieceSelection.getAttribute('class') === 'blue' && blueCells.includes(event.target.getAttribute('id'))){
@@ -62,30 +55,62 @@ const game = {
         }
       }
     })
+    document.querySelector('.pieces-container-p1').addEventListener('click', (event)=>{
+      if(event.target.getAttribute('class') === 'blue'){
+        pieceSelection = event.target
+      }
+    })
     document.querySelector('.pieces-container-p2').addEventListener('click', (event)=>{
       if(event.target.getAttribute('class') === 'red'){
         pieceSelection = event.target
       }
     })
   },
-  firstMove(){
-    document.querySelector('#board-container').addEventListener('click', (event)=>{
-      console.log(event);
-    if(movePiece && event.target.getAttribute('class') === 'square')
-      if(event.target.getAttribute('class') === 'blue' && cells.includes(event.target.getAttribute('id'))){
-        event.target.append(movePiece)
-        movePiece = null;
-        nextMove(movePiece)
-      }
-    })
-  },
-  nextMove(movePiece){
-    document.querySelector('#board-container').addEventListener('click', (event)=>{
-      if(event.target.getAttribute('class') === 'square'){
-        movePiece = event.target
-      }
-    })
-  }
+  gameMovement(){
+  document.querySelector('#board-container').addEventListener('click', (event)=>{
+    timesClicked++
+    console.log(timesClicked);
+    if(timesClicked === 1 && event.target.getAttribute('class') === 'blue' ||  timesClicked === 1 && event.target.getAttribute('class') === 'red'){
+      pieceToBeMoved = event.target
+    }else{
+      const spaceBeingMovedTo = event.target
+      console.log(pieceToBeMoved);
+      spaceBeingMovedTo.append(pieceToBeMoved)
+      timesClicked = 0;
+      pieceToBeMoved = null;
+    }
+  })
+}
+
+
+//   getPiece(){
+//     console.log('getPiece');
+//     // console.log(document.querySelectorAll('.square'));
+//     document.querySelector('#board-container').addEventListener('click', (event)=>{
+//       console.log(event.target.getAttribute('class'));
+//       const pieceToBeMoved = event.target
+//       if(event.target.getAttribute('class') === 'square')
+//       console.log('passed if');
+//       console.log(pieceToBeMoved);
+//       game.movePieces(pieceToBeMoved)
+//   })
+// },
+//   movePieces(movePiece) {
+//     document.querySelector('#board-container').removeEventListener('click', ()=>{
+//       console.log('remv event');
+//     })
+//     console.log('test');
+//     console.log(movePiece);
+//     document.querySelector('#board-container').addEventListener('click', (event)=>{
+//       console.log(event);
+//       const spaceBeingMovedTo = event.target
+//       if(event.target.getAttribute('class') === 'blue'){
+//         spaceBeingMovedTo.append(movePiece)
+//         console.log(movePiece);
+//         movePiece = null
+//       }
+//     })
+//   },
 }
 
 
@@ -238,6 +263,7 @@ const pieceVs = {
 
 // let moveResults = ''
 //   if(pieceVs[player1Move][player2Move] === "win"){
+//
 //     // moveResults = // "lose" piece goes into game-play-container
 //                   // "win" piece occupies the spot its currently in
 //                   // OR
@@ -247,34 +273,7 @@ const pieceVs = {
 //     // moveResults = // move piece to game-play-container
 //    }
 // }
-
-
-//click event (maybe update event listener to run code if piece already in spot) trigger battle
-
-
-// an indicator for which piece is currently selected
-// function selectPiece(){
-//   if(currentPiece === '' && $(evt.currentTarget).css('border') === '1px solid black'){
-// 		$(evt.currentTarget).css('border', '4px solid green')
-// 		currentPiece = evt.currentTarget;
-//     // and indicating when it is no longer selected
-//   }else if ($(evt.currentTarget).css('border') === '4px solid green'){
-// 		$(evt.currentTarget).css('border', '1px solid black')
-// 		currentPiece = '';
-// 	}
-// }
-
-// function shows the instructions for the game, or hides them
-// function showInstructions() {
-// 	if (instructions.css('display') === 'none'){
-// 		instructions.css('display', 'flex');
-// 		about.css('display', 'block');
-// 	} else {
-// 		instructions.css('display', 'none');
-// 		about.css('display', 'none');
-// 	}
-//
-// }
+// pieceVs(player1Move, player2Move)
 
 document.getElementById("5C").style.pointerEvents = "none";
 document.getElementById("5D").style.pointerEvents = "none";
@@ -286,7 +285,7 @@ document.getElementById("6G").style.pointerEvents = "none";
 document.getElementById("6H").style.pointerEvents = "none";
 
 // event listeners
-let form = document.getElementById('ready-button')
+let form = document.getElementById('place-piece-button')
     form.addEventListener('click', (event)=>{
         event.preventDefault()
         game.placePieces()
@@ -294,5 +293,59 @@ let form = document.getElementById('ready-button')
 let form2 = document.getElementById('start-button')
     form2.addEventListener('click', (event)=>{
         event.preventDefault()
-        game.firstMove()
+        game.gameMovement()
+        document.getElementById('place-piece-button').disable = true
+        document.getElementById('start-button').disable = true
     })
+
+
+
+
+
+
+// make pieces move after start button clicked
+// make pieces win/lose when they touch
+// when piece "lose" move to its piece container
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // an indicator for which piece is currently selected
+    // function selectPiece(){
+    //   if(currentPiece === '' && $(evt.currentTarget).css('border') === '1px solid black'){
+    // 		$(evt.currentTarget).css('border', '4px solid green')
+    // 		currentPiece = evt.currentTarget;
+    //     // and indicating when it is no longer selected
+    //   }else if ($(evt.currentTarget).css('border') === '4px solid green'){
+    // 		$(evt.currentTarget).css('border', '1px solid black')
+    // 		currentPiece = '';
+    // 	}
+    // }
+
+    // function shows the instructions for the game, or hides them
+    // function showInstructions() {
+    // 	if (instructions.css('display') === 'none'){
+    // 		instructions.css('display', 'flex');
+    // 		about.css('display', 'block');
+    // 	} else {
+    // 		instructions.css('display', 'none');
+    // 		about.css('display', 'none');
+    // 	}
+    //
+    // }
