@@ -99,13 +99,6 @@ let form2 = document.getElementById('start-button')
 
 
 
-// make pieces move after start button clicked
-// make pieces win/lose when they touch
-// when piece "lose" move to its piece container
-
-
-
-
 
 
 
