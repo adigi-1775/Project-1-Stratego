@@ -57,54 +57,6 @@ const game = {
   }
 }
 
-let battleResults = ''
-      if(bluePieces.value < redPieces.value){
-          bluePieces = 'win'
-          redPieces = 'lose'
-          let
-      }else if(redPieces.value < bluePieces.value){
-          redPieces = 'win'
-          bluePieces = 'lose'
-
-      }else if(bluePieces flag ){
-        alert('Game Over Blue Wins!')
-      }else if(redPieces flag){
-        alert('Game Over Blue Wins!')
-      }
-
-
-
-//   getPiece(){
-//     console.log('getPiece');
-//     // console.log(document.querySelectorAll('.square'));
-//     document.querySelector('#board-container').addEventListener('click', (event)=>{
-//       console.log(event.target.getAttribute('class'));
-//       const pieceToBeMoved = event.target
-//       if(event.target.getAttribute('class') === 'square')
-//       console.log('passed if');
-//       console.log(pieceToBeMoved);
-//       game.movePieces(pieceToBeMoved)
-//   })
-// },
-//   movePieces(movePiece) {
-//     document.querySelector('#board-container').removeEventListener('click', ()=>{
-//       console.log('remv event');
-//     })
-//     console.log('test');
-//     console.log(movePiece);
-//     document.querySelector('#board-container').addEventListener('click', (event)=>{
-//       console.log(event);
-//       const spaceBeingMovedTo = event.target
-//       if(event.target.getAttribute('class') === 'blue'){
-//         spaceBeingMovedTo.append(movePiece)
-//         console.log(movePiece);
-//         movePiece = null
-//       }
-//     })
-//   },
-
-
-
 document.getElementById("5C").style.pointerEvents = "none";
 document.getElementById("5D").style.pointerEvents = "none";
 document.getElementById("5G").style.pointerEvents = "none";
@@ -113,6 +65,20 @@ document.getElementById("6C").style.pointerEvents = "none";
 document.getElementById("6D").style.pointerEvents = "none";
 document.getElementById("6G").style.pointerEvents = "none";
 document.getElementById("6H").style.pointerEvents = "none";
+
+// let battleResults = ''
+//       if(bluePieces.value < redPieces.value){
+//           bluePieces = 'win'
+//           redPieces = 'lose'
+//           let
+//       }else if(redPieces.value < bluePieces.value){
+//           redPieces = 'win'
+//           bluePieces = 'lose'
+//       }else if(bluePieces flag ){
+//         alert('Game Over Blue Wins!')
+//       }else if(redPieces flag){
+//         alert('Game Over Blue Wins!')
+//       }
 
 // event listeners
 let form = document.getElementById('place-piece-button')
