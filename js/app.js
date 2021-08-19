@@ -68,7 +68,7 @@ let battleResults = (spaceBeingMovedTo)=>{
   if(spaceBeingMovedTo === )
 // if space has another blue piece dont move
 // if space has a red piece fight
-// else move to space 
+// else move to space
 
 
   for(let p=0; p<bluePieces.length; p++){
@@ -125,21 +125,6 @@ let turns = document.getElementById('turn-button')
         turn = 'blue'
       }
     })
-
-
-// let blueTurn = document.querySelector('.blue')
-//     blueTurn.addEventListener('click', (event)=>{
-//       let blueToRed = document.querySelector('#header2')
-//       document.getElementById('#header2').innerHTML = `It's red turn! Make your move.`
-//       event.preventDefault()
-//     })
-// let redTurn = document.querySelector('.red')
-//     redTurn.addEventListener('click', (event)=>{
-//       let blueToRed = document.querySelector('#header2')
-//       document.getElementById('#header2').innerHTML = `It's blue turn! Make your move.`
-//       event.preventDefault()
-//     })
-
 
 
 

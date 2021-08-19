@@ -7,11 +7,16 @@ body {
 h1 {
   text-align: center;
   color: limegreen;
+  font-style: bold;
+  -webkit-text-stroke: 2px black;
+  font-size: 50px;
 }
 h2{
-  color: white;
+  color: limegreen;
   text-align: center;
-  font-size: 40px;
+  font-weight: bolder;
+  font-size: 45px;
+  -webkit-text-stroke: 2px black;
 }
 
 .blue {
