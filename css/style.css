@@ -6,6 +6,12 @@ body {
 
 h1 {
   text-align: center;
+  color: limegreen;
+}
+h2{
+  color: white;
+  text-align: center;
+  font-size: 40px;
 }
 
 .blue {
@@ -64,6 +70,7 @@ h1 {
   height: 500px;
   margin-bottom: 90px;
   margin-left: 25px;
+  /* margin-left: 300px; */
 }
 
 #place-piece-button {
@@ -87,35 +94,9 @@ h1 {
 
 
 
-/* .square, #5C {
-  background-color: red;
-} */
-/* #5D {
-  background-color: red;
-}
-#5G {
-  background-color: red;
-}
-#5H {
-  background-color: red;
-}
-#6C {
-  background-color: red;
-}
-#6D {
-  background-color: red;
-}
-#6G {
-  background-color: red;
-}
-#6H {
-  background-color: red;
-} */
 
 
-
-
-
+/* ----------------CODE BELOW IS FOR FUTURE UPDATES----------------- */
 
 /* #table {
   perspective: 900px;

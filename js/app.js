@@ -4,12 +4,14 @@
 let pieceSelection = null;
 let pieceToBeMoved = null;
 let timesClicked = 0;
+let turn = 'blue';
 
-// array of objects
+// array of objects (game pieces)
 const bluePieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: 10}];
 
 const redPieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: 10}];
 
+// array of squares
 const cells = ['1A', '1B', '1C', '1D', '1E', '1F', '1G', '1H', '1I', '1J', '2A', '2B', '2C', '2D', '2E', '2F','2G', '2H', '2I', '2J', '3A', '3B','3C', '3D', '3E', '3F', '3G', '3H', '3I', '3J', '4A', '4B', '4C', '4D','4E', '4F', '4G', '4H', '4I', '4J', '5A', '5B', '5E', '5F', '5I', '5J', '6A', '6B', '6E', '6F', '6I', '6J', '7A', '7B', '7C', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8B', '8C', '8D', '8E', '8F', '8G', '8H', '8I', '8J', '9A', '9B', '9C', '9D', '9E', '9F', '9G', '9H', '9I', '9J', '10A', '10B', '10C', '10D', '10E', '10F', '10G', '10H', '10I', '10J']
 
 const blueCells = ['1A', '1B', '1C', '1D', '1E', '1F', '1G', '1H', '1I', '1J', '2A', '2B', '2C', '2D', '2E', '2F','2G', '2H', '2I', '2J', '3A', '3B','3C', '3D', '3E', '3F', '3G', '3H', '3I', '3J', '4A', '4B', '4C', '4D','4E', '4F', '4G', '4H', '4I', '4J']
@@ -44,41 +46,61 @@ const game = {
   gameMovement(){
       document.querySelector('#board-container').addEventListener('click', (event)=>{
       timesClicked++
-      if(timesClicked === 1 && event.target.getAttribute('class') === 'blue' ||  timesClicked === 1 && event.target.getAttribute('class') === 'red'){
+      if(timesClicked === 1 && event.target.getAttribute('class') === 'blue' && turn === 'blue' ||  timesClicked === 1 && event.target.getAttribute('class') === 'red' && turn === 'red'){
         pieceToBeMoved = event.target
       }else{
+        if(pieceToBeMoved === null){
+          timesClicked = 0;
+          return;
+        }
         const spaceBeingMovedTo = event.target
-        console.log(pieceToBeMoved);
         spaceBeingMovedTo.append(pieceToBeMoved)
         timesClicked = 0;
         pieceToBeMoved = null;
+        battleResults(spaceBeingMovedTo);
       }
     })
   }
 }
 
-document.getElementById("5C").style.pointerEvents = "none";
-document.getElementById("5D").style.pointerEvents = "none";
-document.getElementById("5G").style.pointerEvents = "none";
-document.getElementById("5H").style.pointerEvents = "none";
-document.getElementById("6C").style.pointerEvents = "none";
-document.getElementById("6D").style.pointerEvents = "none";
-document.getElementById("6G").style.pointerEvents = "none";
-document.getElementById("6H").style.pointerEvents = "none";
 
-// let battleResults = ''
-//       if(bluePieces.value < redPieces.value){
-//           bluePieces = 'win'
-//           redPieces = 'lose'
-//           let
-//       }else if(redPieces.value < bluePieces.value){
-//           redPieces = 'win'
-//           bluePieces = 'lose'
-//       }else if(bluePieces flag ){
-//         alert('Game Over Blue Wins!')
-//       }else if(redPieces flag){
-//         alert('Game Over Blue Wins!')
-//       }
+let battleResults = (spaceBeingMovedTo)=>{
+  if(spaceBeingMovedTo === )
+// if space has another blue piece dont move
+// if space has a red piece fight
+// else move to space 
+
+
+  for(let p=0; p<bluePieces.length; p++){
+
+  }
+  for(let p=0; p<redPieces.length; p++){
+
+  }
+
+      if(bluePieces.value < redPieces.value){
+          bluePieces = 'win'
+          redPieces = 'lose'
+          // losing piece moves to container
+      }else if(redPieces.value < bluePieces.value){
+          redPieces = 'win'
+          bluePieces = 'lose'
+      }else if(bluePieces flag){
+        alert('Game Over Blue Wins!')
+      }else if(redPieces flag){
+        alert('Game Over Blue Wins!')
+      }
+}
+
+// console.log(document.getElementById("5C"));
+// document.getElementById("5C").style.pointerEvents = "none";
+// document.getElementById("5D").style.pointerEvents = "none";
+// document.getElementById("5G").style.pointerEvents = "none";
+// document.getElementById("5H").style.pointerEvents = "none";
+// document.getElementById("6C").style.pointerEvents = "none";
+// document.getElementById("6D").style.pointerEvents = "none";
+// document.getElementById("6G").style.pointerEvents = "none";
+// document.getElementById("6H").style.pointerEvents = "none";
 
 // event listeners
 let form = document.getElementById('place-piece-button')
@@ -90,12 +112,33 @@ let form2 = document.getElementById('start-button')
     form2.addEventListener('click', (event)=>{
         event.preventDefault()
         game.gameMovement()
+        turns = 'blue'
         document.getElementById('place-piece-button').disable = true
         document.getElementById('start-button').disable = true
     })
+let turns = document.getElementById('turn-button')
+    turns.addEventListener('click', (event)=>{
+      event.preventDefault()
+      if(turn === 'blue'){
+        turn = 'red'
+      }else if(turn === 'red'){
+        turn = 'blue'
+      }
+    })
 
 
-
+// let blueTurn = document.querySelector('.blue')
+//     blueTurn.addEventListener('click', (event)=>{
+//       let blueToRed = document.querySelector('#header2')
+//       document.getElementById('#header2').innerHTML = `It's red turn! Make your move.`
+//       event.preventDefault()
+//     })
+// let redTurn = document.querySelector('.red')
+//     redTurn.addEventListener('click', (event)=>{
+//       let blueToRed = document.querySelector('#header2')
+//       document.getElementById('#header2').innerHTML = `It's blue turn! Make your move.`
+//       event.preventDefault()
+//     })
 
 
 
