@@ -7,9 +7,9 @@ let timesClicked = 0;
 let turn = 'blue';
 
 // array of objects (game pieces)
-const bluePieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: 10}];
-
-const redPieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: 10}];
+// const bluePieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: 10}];
+//
+// const redPieces = [{name: 'general', value:1}, {name:'colonel', value:2}, {name: 'major', value:3}, {name: 'captain', value:4}, {name: 'lieutenant', value:5}, {name: 'sergeant', value:6}, {name: 'corporal', value:7}, {name: 'mineSweeper', value:8}, {name: 'infantry', value:9}, {name: 'flag', value: 10}];
 
 // array of squares
 const cells = ['1A', '1B', '1C', '1D', '1E', '1F', '1G', '1H', '1I', '1J', '2A', '2B', '2C', '2D', '2E', '2F','2G', '2H', '2I', '2J', '3A', '3B','3C', '3D', '3E', '3F', '3G', '3H', '3I', '3J', '4A', '4B', '4C', '4D','4E', '4F', '4G', '4H', '4I', '4J', '5A', '5B', '5E', '5F', '5I', '5J', '6A', '6B', '6E', '6F', '6I', '6J', '7A', '7B', '7C', '7D', '7E', '7F', '7G', '7H', '7I', '7J', '8A', '8B', '8C', '8D', '8E', '8F', '8G', '8H', '8I', '8J', '9A', '9B', '9C', '9D', '9E', '9F', '9G', '9H', '9I', '9J', '10A', '10B', '10C', '10D', '10E', '10F', '10G', '10H', '10I', '10J']
@@ -53,44 +53,37 @@ const game = {
           timesClicked = 0;
           return;
         }
-        const spaceBeingMovedTo = event.target
+        let spaceBeingMovedTo = event.target
+          if(spaceBeingMovedTo.parentElement.getAttribute('class') === 'square'){
+            spaceBeingMovedTo = event.target.parentElement
+          }
         spaceBeingMovedTo.append(pieceToBeMoved)
         timesClicked = 0;
         pieceToBeMoved = null;
-        battleResults(spaceBeingMovedTo);
+        this.checkForBattle(spaceBeingMovedTo);
       }
     })
-  }
-}
-
-
-let battleResults = (spaceBeingMovedTo)=>{
-  if(spaceBeingMovedTo === )
-// if space has another blue piece dont move
-// if space has a red piece fight
-// else move to space
-
-
-  for(let p=0; p<bluePieces.length; p++){
-
-  }
-  for(let p=0; p<redPieces.length; p++){
-
-  }
-
-      if(bluePieces.value < redPieces.value){
-          bluePieces = 'win'
-          redPieces = 'lose'
-          // losing piece moves to container
-      }else if(redPieces.value < bluePieces.value){
-          redPieces = 'win'
-          bluePieces = 'lose'
-      }else if(bluePieces flag){
-        alert('Game Over Blue Wins!')
-      }else if(redPieces flag){
-        alert('Game Over Blue Wins!')
+  },
+  checkForBattle(space){
+    if(space.children.length === 2){
+      if(space.children[0].getAttribute('value') < space.children[1].getAttribute('value')){
+        space.children[1].append('.pieces-container-p2')
+      }else if(space.children[0].getAttribute('value') > space.children[1].getAttribute('value')){
+        space.children[0].append('.pieces-container-p1')
       }
+      console.log(space.children[0].getAttribute('value'));
+      console.log(space.children[1].getAttribute('value'));
+
+      console.log('battle');
+    }else{
+      console.log('boring');
+    }
+  }
 }
+
+const bluePieces = document.querySelectorAll('.blue')
+const redPieces = document.querySelectorAll('.red')
+
 
 // console.log(document.getElementById("5C"));
 // document.getElementById("5C").style.pointerEvents = "none";

@@ -77,11 +77,11 @@ h2{
   margin-left: 25px;
   /* margin-left: 300px; */
 }
-
 #place-piece-button {
   padding-top: 2px;
   padding-bottom: 2px;
   border-color: black;
+  background-color: limegreen;
 }
 #place-piece-button:active {
   transform: translateY(2px);
@@ -92,12 +92,22 @@ h2{
   border-color: black;
   margin-left: 700px;
   margin-bottom: 60px;
+  background-color: limegreen;
 }
 #start-button:active {
   transform: translateY(2px);
 }
-
-
+#turn-button {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-color: black;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  background-color: salmon;
+}
+#turn-button:active {
+  transform: translateY(2px);
+}
 
 
 

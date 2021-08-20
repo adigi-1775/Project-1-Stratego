@@ -13,10 +13,6 @@
     <form id="form2">
       <button type="submit" id="start-button">Start Game</button>
     </form>
-    <form id="form3">
-      <button type="submit" id="turn-button">Done</button>
-    </form>
-    <script type="text/javascript" src="js/app.js"></script>
       <div class="pieces-container-p1">
         <div class="blue" id="generalb" value="1">Gen</div>
         <div class="blue" id="colonel" value="2">Col</div>
@@ -101,7 +97,10 @@
         <div class="red" id="bomb6">B</div> -->
         <div class="red" id="flagr" value="10">Flag</div>
       </div>
-      <h2 id='header2'>Place your Pieces</h2>
+      <h2 id='header2'>Place your Piece</h2>
+      <form id="form3">
+        <button type="submit" id="turn-button">End Turn</button>
+      </form>
       <div id="board-container">
           <div class="square" id="1A"></div>
           <div class="square" id="1B"></div>
@@ -208,5 +207,6 @@
           <figure id="front"></figure>
           <figure id="back"></figure>
       </div> -->
+      <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
