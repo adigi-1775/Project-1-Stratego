@@ -6,6 +6,30 @@
 
 - When the users are ready to begin the game one user clicks the "Place Pieces" button located beneath the blue users piece board
 
-- Once the button is clicked, both users should be able to click their pieces and place them on the board by clicking on a square on the game board immediately after clicking a piece
+- When the button is clicked, both users should be able to click their pieces and place them on the board by clicking on a square on the game board immediately after clicking a piece
 
-- Each color has a section of the board associated with the pieces  
+- Each color has a section of the board where its pieces are allowed to be placed after the "place Pieces" button has been clicked
+
+- When both users have placed all their pieces on the game board, one user clicks the "Start Game" button located beneath the red users piece board
+
+- When the "Start Game" button has been clicked the pieces should be able to move around the game board in the same way they were placed there (i.e. click the piece then click the spot to move it to)
+
+- Blue will always go first
+
+- When the user for blue has moved one piece the user will need to click the "End Turn" button located to the left of the game board
+
+- After the "End Turn" button is clicked the user for red should be able to move their pieces on the game board
+
+- When the user for red has moved one piece the user will need to click the "End Turn" button located to the left of the game board
+
+- Both users will take turns moving their pieces one spot at a time, and clicking the "End Turn" button after each move to change turns
+
+- When a blue piece and red piece are placed in the same spot on the game board it will initiate a battle
+
+- Every piece has a value associated with it
+
+- When a more powerful piece or a piece is placed in the same spot as an opponents piece the losing piece or the piece with a lesser value will be sent back to its original piece board and removed from the game
+
+- The users will strategically use move pieces around the board eliminating their opponents pieces until one user captures the flag of the other user
+
+- When a flag is captured the game is over and the user who has captured the flag has won the game 
