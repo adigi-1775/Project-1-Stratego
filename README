@@ -1,0 +1,11 @@
+# Stratego
+
+- The objective of the game is to capture the flag of your opponent by fighting your way through a your opponents military modeled game pieces
+
+## User Stories/game logic
+
+- When the users are ready to begin the game one user clicks the "Place Pieces" button located beneath the blue users piece board
+
+- Once the button is clicked, both users should be able to click their pieces and place them on the board by clicking on a square on the game board immediately after clicking a piece
+
+- Each color has a section of the board associated with the pieces  

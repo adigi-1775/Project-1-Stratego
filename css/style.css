@@ -3,6 +3,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+img {
+  max-width: 600px;
+  max-height: 600px;
+  margin-left: 750px;
+}
 h1 {
   text-align: center;
   color: black;
@@ -65,6 +70,7 @@ h2{
   height: 500px;
   margin-bottom: 90px;
   margin-right: 25px;
+  margin-left: 50px;
   background-image: linear-gradient(black, blue);
 }
 .pieces-container-p2 {
@@ -77,22 +83,23 @@ h2{
   margin-bottom: 90px;
   margin-left: 25px;
   background-image: linear-gradient(black, red);
-  /* margin-left: 300px; */
+  margin-left: 950px;
 }
 #place-piece-button {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
   border-color: black;
   background-color: limegreen;
+  margin-left: 100px;
 }
 #place-piece-button:active {
   transform: translateY(2px);
 }
 #start-button {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 5px;
   border-color: black;
-  margin-left: 700px;
+  margin-left: 1100px;
   margin-bottom: 60px;
   background-color: limegreen;
 }
@@ -100,10 +107,7 @@ h2{
   transform: translateY(2px);
 }
 #turn-button {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 5px;
   border-color: black;
   margin-bottom: 20px;
   margin-left: 25px;

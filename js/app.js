@@ -65,10 +65,10 @@ const game = {
           if(spaceBeingMovedTo.parentElement.getAttribute('class') === 'square'){
             spaceBeingMovedTo = event.target.parentElement
           }
-        spaceBeingMovedTo.append(pieceToBeMoved)
-        timesClicked = 0;
-        pieceToBeMoved = null;
-        this.battleResults(spaceBeingMovedTo);
+          spaceBeingMovedTo.append(pieceToBeMoved)
+          timesClicked = 0;
+          pieceToBeMoved = null;
+          this.battleResults(spaceBeingMovedTo);
       }
     })
   },
@@ -78,7 +78,7 @@ const game = {
           redWinsGame()
         }else if(space.children[0].getAttribute('id') === 'flagr' && space.children[1].getAttribute('class') === 'blue'){
           blueWinsGame()
-          
+
         }else if(space.children[0].getAttribute('class') === 'blue' && space.children[0].getAttribute('value') < space.children[1].getAttribute('value')){
             losingRedPiece(space.children[1])
 
@@ -103,14 +103,14 @@ const game = {
     }
 }
 
-document.getElementById("5C").style.pointerEvents = "none";
-document.getElementById("5D").style.pointerEvents = "none";
-document.getElementById("5G").style.pointerEvents = "none";
-document.getElementById("5H").style.pointerEvents = "none";
-document.getElementById("6C").style.pointerEvents = "none";
-document.getElementById("6D").style.pointerEvents = "none";
-document.getElementById("6G").style.pointerEvents = "none";
-document.getElementById("6H").style.pointerEvents = "none";
+// document.getElementById("5C").style.pointerEvents = "none";
+// document.getElementById("5D").style.pointerEvents = "none";
+// document.getElementById("5G").style.pointerEvents = "none";
+// document.getElementById("5H").style.pointerEvents = "none";
+// document.getElementById("6C").style.pointerEvents = "none";
+// document.getElementById("6D").style.pointerEvents = "none";
+// document.getElementById("6G").style.pointerEvents = "none";
+// document.getElementById("6H").style.pointerEvents = "none";
 
 // event listeners
 let form = document.getElementById('place-piece-button')
